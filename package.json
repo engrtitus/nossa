@@ -1,0 +1,58 @@
+{
+  "name": "nossa",
+  "version": "1.0.4",
+  "description": "Prevents whitespace as first character of input and textarea fields",
+  "source": "src/nossa.js",
+  "main": "dist/nossa.js",
+  "exports": "dist/nossa.modern.js",
+  "module": "dist/nossa.module.js",
+  "unpkg": "dist/nossa.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "microbundle watch",
+    "build": "rm -rf dist && microbundle --inline none",
+    "format": "prettier --write '**'",
+    "prepublishOnly": "npm run -s build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engrtitus/nossa.git"
+  },
+  "keywords": [
+    "html5",
+    "input",
+    "textarea",
+    "required",
+    "white space",
+    "form",
+    "javascript",
+    "react",
+    "vue",
+    "event"
+  ],
+  "author": "Salisu Titus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/engrtitus/nossa/issues"
+  },
+  "homepage": "https://github.com/engrtitus/nossa#readme",
+  "devDependencies": {
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "microbundle": "^0.13.0",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  }
+}

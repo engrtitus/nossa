@@ -1,0 +1,76 @@
+body {
+	background-color: #f4f7fa;
+	color: #022b69;
+	padding: 16px;
+	font-family: "Roboto", sans-serif;
+}
+
+.content {
+	max-width: 550px;
+	margin: 0 auto;
+}
+.card {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: -3px 3px 12px rgba(10, 46, 101, 0.03);
+	padding: 30px 16px;
+}
+input,
+textarea {
+	min-height: 40px;
+	width: 100%;
+	padding: 12px 10px;
+	border: 1px solid #9da3a6;
+	background: #fff;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+	border-radius: 4px;
+	box-shadow: none;
+	color: #022b69;
+	font-size: 1em;
+	font-weight: 400;
+	transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	resize: none;
+}
+input:focus,
+textarea:focus {
+	outline: 0;
+	border: 1px solid #0070ba;
+	box-shadow: none;
+	background-color: #fff;
+}
+
+.mb-2 {
+	margin-bottom: 2rem;
+}
+.mt-2 {
+	margin-top: 2rem;
+}
+.mt-1 {
+	margin-top: 1rem;
+}
+.text-center {
+	text-align: center;
+}
+h2 {
+	margin-bottom: 0px;
+}
+p {
+	color: #5f6368;
+}
+
+button {
+	height: 50px;
+	border-radius: 6px;
+	appearance: none;
+	border: 0px;
+	background-color: #0070ba;
+	color: #fff;
+	width: 100%;
+	cursor: pointer;
+	transition: 200ms all;
+	outline: none;
+}
+button:hover {
+	transform: translateY(-1px);
+}

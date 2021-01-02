@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="index.css" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Nossa Example</title>
+	</head>
+	<body>
+		<main class="content">
+			<h2 class="text-center mt-2">NOSSA</h2>
+			<p class="text-center mt-1 mb-2">
+				Try submitting the form below by adding a space in the input or textarea
+			</p>
+			<div class="card">
+				<form class="nossa-demo-form">
+					<div class="mb-2 mt-1">
+						<input type="text" required />
+					</div>
+					<div class="mb-2">
+						<textarea rows="4" required></textarea>
+					</div>
+					<button type="submit" class="nossa-demo-button">Submit</button>
+				</form>
+			</div>
+		</main>
+		<script type="module" src="../src/nossa.js"></script>
+		<script>
+			var nossaDemoForm = document.querySelector(".nossa-demo-form");
+			var nossaDemoButton = document.querySelector(".nossa-demo-button");
+			nossaDemoForm.addEventListener("submit", onFormSubmit, false);
+			function onFormSubmit(e) {
+				e.preventDefault();
+				if (nossaDemoButton.textContent !== "Submit") {
+					return;
+				}
+				nossaDemoButton.textContent = "Nice one !!";
+				setTimeout(function () {
+					nossaDemoButton.textContent = "Submit";
+				}, 3000);
+			}
+		</script>
+	</body>
+</html>

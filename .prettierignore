@@ -1,0 +1,9 @@
+node_modules
+.cache
+.github
+.rts2_cache_*
+dist
+LICENSE
+package-lock.json
+.*ignore
+yarn.lock
