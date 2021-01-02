@@ -12,6 +12,8 @@ space bar.
 NOSSA, short for "No Starting Space Allowed" prevents that by ensuring all
 inputs and textareas values cannot be started with a whitespace.
 
+[See Demo](https://engrtitus.github.io/nossa/example/)
+
 ## Install
 
 ```
