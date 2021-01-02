@@ -66,20 +66,46 @@ function preventSpaceStart(e) {
 		 * the begining of the input field (element.selectionStart is 0).
 		 * If true, prevent input/textarea value from being updated
 		 */
-		if (
-			(spaceRegex.test(value) || isPasteTextTrimmed) &&
-			element.selectionStart === 0
-		) {
-			e.returnValue = false;
-			if (e.preventDefault) {
-				e.preventDefault();
+		if (element.selectionStart === 0) {
+			if (spaceRegex.test(value) || isPasteTextTrimmed) {
+				e.returnValue = false;
+				if (e.preventDefault) {
+					e.preventDefault();
+				}
+				/**
+				 * Update the element's value with the trimmed text pasted
+				 */
+				if (isPasteTextTrimmed) {
+					element.value = value;
+				}
+			} else {
+				/**
+				 * e.Keycode returns 229 on android regardless of
+				 * character pressed (a, b, d, space-bar etc returns 229).
+				 *
+				 * So, we can't determine if whitespace was entered from the keycode.
+				 *
+				 * What we can do is modify the value by removing the space as
+				 * it is being entered
+				 */
+				modifyValue(element);
 			}
-			/**
-			 * Update the element's value with the trimmed text pasted
-			 */
-			if (isPasteTextTrimmed) {
-				element.value = value;
-			}
+		}
+	}
+}
+
+function modifyValue(element) {
+	element.addEventListener("input", revertSpaceEntered, false);
+
+	function revertSpaceEntered() {
+		element.removeEventListener("input", revertSpaceEntered);
+		/**
+		 * We need to check if current value is "" after trimming
+		 * (i.e only space as been entered) and replace the whitespaces
+		 * with ""
+		 */
+		if (element.value.trim() === "") {
+			element.value = "";
 		}
 	}
 }
