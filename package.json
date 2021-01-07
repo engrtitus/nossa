@@ -1,6 +1,6 @@
 {
   "name": "nossa",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Prevents whitespace as first character of input and textarea fields",
   "source": "src/nossa.js",
   "main": "dist/nossa.js",
