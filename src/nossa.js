@@ -11,7 +11,6 @@ import "./polyfills.js";
 	}
 	body.addEventListener("keydown", preventSpaceStart, false);
 	body.addEventListener("paste", preventSpaceStart, false);
-	body.addEventListener("focusout", preventSpaceStart, false);
 })();
 
 function preventSpaceStart(e) {
@@ -30,11 +29,6 @@ function preventSpaceStart(e) {
 		 * Then we check, if the input/text area has class nossa-ignore
 		 */
 		if (element.matches(".nossa-ignore")) {
-			return;
-		}
-
-		if (e.type === "focusout") {
-			removeStartingSpaces(element);
 			return;
 		}
 
